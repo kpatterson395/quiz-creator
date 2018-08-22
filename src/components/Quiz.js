@@ -20,27 +20,9 @@ export default class Quiz extends React.Component {
 
 			if(e.target.elements[i].options[ans].value === "correct"){
 				ansArr.push(e.target.elements[i].options[ans].value)
-				let temp = {...this.state.quiz[i],
-							userAns: true}
-				this.setState({
-					quiz: [
-						...this.state.quiz.splice(0, i),
-						temp,
-						...this.state.quiz.splice(i+1)
-					]
-				})
+
 			}
-			else {
-				let temp = {...this.state.quiz[i],
-					userAns: false}
-				this.setState({
-					quiz: [
-						...this.state.quiz.splice(0, i),
-						temp,
-						...this.state.quiz.splice(i+1)
-					]
-				})				
-			}
+
 		}
 
 		alert("You got "+ansArr.length+" out of "+questions+" right!")
@@ -51,7 +33,7 @@ export default class Quiz extends React.Component {
 				<h1>Quiz Page</h1>
 				{ !this.state.quiz[0] ? <h2> Please create Quiz! </h2> :
 					<form onSubmit={this.handleSubmit} id="quiz_form">
-						{this.state.quiz.map((val) => {
+						{this.state.quiz.map((val, index) => {
 							return (
 								<Question 
 									key={this.state.quiz.indexOf(val)} 
@@ -62,6 +44,7 @@ export default class Quiz extends React.Component {
 									wrongAns2={val.wrongAns[1]}
 									wrongAns3={val.wrongAns[2]}
 								/>
+
 								)
 							})}
 						<input type="submit" />
