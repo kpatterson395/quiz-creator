@@ -1,0 +1,150 @@
+$primary-color: #0981f2;
+
+
+
+%link {
+		background: white;
+		border-radius: 10px;
+		border: 1px solid $primary-color;
+		color: $primary-color;
+		font-weight: 600;
+		display: block;
+		height: 50px;
+		left: 40%;
+		padding-top: 15px;
+		margin: 50px 0;
+		text-decoration: none;
+		position: relative;
+		width: 20%; 
+		&:hover {
+			background: $primary-color;
+			color: white;
+		}
+
+}
+
+
+%submit-btn {
+	background: $primary-color;
+	border-radius: 10px;
+	color: white;
+	display: block;
+	font-family: 'Raleway', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	height: 50px;
+	left: 45%;
+	width: 10%;
+	&:hover {
+		background: white;
+		border: 1px solid $primary-color;
+		color: $primary-color;
+		cursor: pointer;
+	}		
+}
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.head {
+	background: $primary-color;
+	border-radius: 20px;
+	color: white;
+	height: 150px;
+	font-family: 'Lato', sans-serif;
+	margin: 10px 0 50px 0;
+	padding: 50px;
+	text-align: center;
+
+}
+
+
+.quiz-creator {
+	font-family: 'Raleway', sans-serif;
+	height: 500px;
+	text-align: center;
+	width: 100%;
+	h2 {
+		padding: 30px;
+	}
+
+	input[type="text"], textarea {
+		display: block;
+		height: 30px;
+		left: 45%;
+		margin: 10px 0;
+		position: relative;
+		width: 10%;
+	}
+	textarea {
+		height: 100px;
+		left: 35%;
+		width: 30%
+	}
+	input[type="submit"] {
+		margin: 20px 0;
+		position: relative;
+		@extend %submit-btn;	
+	}
+
+	#start-link {
+		@extend %link
+	}
+
+}
+
+
+
+.quiz-page {
+	font-family: 'Raleway', sans-serif;
+	height: 500px;
+	text-align: center;
+	width: 100%;
+	#quiz_form {
+		margin: 10px;
+	}
+	
+	input[type="submit"] {
+		
+		margin: 30px 0 20px 0;
+		position: relative;
+		@extend %submit-btn;
+	}
+
+	.new-link {
+		@extend %link
+	}
+
+
+	select {
+		border-radius: 5px;
+		font-size: 15px; 
+	}
+
+	.return-link {
+		color: $primary-color;
+		padding-top: 50px;
+		text-decoration: none;
+	}
+}
+
+
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}

@@ -12,13 +12,15 @@ export default class Questions extends React.Component {
 			wrong2: this.props.wrongAns2,
 			wrong3: this.props.wrongAns3,
 			userAns: "",
-			order: Math.floor((Math.random()*4))
+			order: Math.floor((Math.random()*4)),
+			complete: false
 		}
 		this.handleChange = this.handleChange.bind(this)
 	}
 	handleChange(e){
 		this.setState({
-			userAns: e.target.value
+			userAns: e.target.value,
+			complete: true
 		})
 	}
 
@@ -28,18 +30,18 @@ export default class Questions extends React.Component {
 							 <option value="wrong2">{this.state.wrong2}</option>,
 							 <option value="wrong3">{this.state.wrong3}</option> ]
 			return (
-			<div>
-				<p>{this.state.question}</p>
-				{this.state.userAns === "correct" ? <p> Correct Answer! </p> : this.state.userAns === "" ? <p></p> : <p> Wrong Answer! </p>}
-				<select value={this.state.userAns ? this.state.userAns : "header"} onChange={this.handleChange} name="question" size="5">
-				  	<option disabled value="header"> -- select an option -- </option>
-				  	{optionArr[this.state.order]}
-				  	{optionArr[(this.state.order+1)%4]}
-				  	{optionArr[(this.state.order+2)%4]}
-				  	{optionArr[(this.state.order+3)%4]}
-				</select>
-			</div>
-		)		
+				<div>
+					<p>{this.state.question}</p>
+					{this.state.userAns === "correct" ? <p className="correct"> Correct! </p> : this.state.userAns === "" ? <p></p> : <p className="wrong"> Incorrect! </p>}
+					<select disabled={this.state.complete ? true : false} value={this.state.userAns ? this.state.userAns : "header"} onChange={this.handleChange} name="question" size="5">
+					  	<option disabled value="header"> -- select an option -- </option>
+					  	{optionArr[this.state.order]}
+					  	{optionArr[(this.state.order+1)%4]}
+					  	{optionArr[(this.state.order+2)%4]}
+					  	{optionArr[(this.state.order+3)%4]}
+					</select>
+				</div>
+			)		
 	}
 
 	

@@ -43,7 +43,7 @@ export default class InputForm extends React.Component{
 	}
 	render(){
 		return (
-			<div>
+			<div className="quiz-creator">
 				<h2>Create Your Quiz</h2>
 				<form onSubmit={this.handleSubmit}>
 					<label>Input question here:</label>
@@ -57,12 +57,15 @@ export default class InputForm extends React.Component{
 						<input type="text" name="wrongAnswer2" />
 						<input type="text" name="wrongAnswer3" />
 					<br />
-					<input type="submit" />
+					<input id="submit-button" type="submit" />
 				</form>
-				<Link to={{
-					pathname: '/quiz',
-					state: {
-						...this.state
+				<p>Your quiz has {this.state.quiz.length} {this.state.quiz.length === 1 ? "question": "questions"}</p>
+				<Link 
+					id="start-link"
+					to={{
+						pathname: '/quiz',
+						state: {
+							...this.state
 					}}}>Start Quiz!</Link>
 			</div>
 		)

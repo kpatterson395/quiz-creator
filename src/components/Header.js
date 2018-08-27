@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = () => {
 	return (
-		<h1>Quiz Creator</h1>
+		<h1 className="head">Quiz Creator</h1>
 
 	)
 }

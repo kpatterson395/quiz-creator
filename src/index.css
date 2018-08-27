@@ -1,5 +1,99 @@
+.quiz-creator #start-link, .quiz-page .new-link {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #0981f2;
+  color: #0981f2;
+  font-weight: 600;
+  display: block;
+  height: 50px;
+  left: 40%;
+  padding-top: 15px;
+  margin: 50px 0;
+  text-decoration: none;
+  position: relative;
+  width: 20%; }
+  .quiz-creator #start-link:hover, .quiz-page .new-link:hover {
+    background: #0981f2;
+    color: white; }
+
+.quiz-creator input[type="submit"], .quiz-page input[type="submit"] {
+  background: #0981f2;
+  border-radius: 10px;
+  color: white;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  height: 50px;
+  left: 45%;
+  width: 10%; }
+  .quiz-creator input[type="submit"]:hover, .quiz-page input[type="submit"]:hover {
+    background: white;
+    border: 1px solid #0981f2;
+    color: #0981f2;
+    cursor: pointer; }
+
+* {
+  box-sizing: border-box; }
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+  padding: 0; }
+
+.head {
+  background: #0981f2;
+  border-radius: 20px;
+  color: white;
+  height: 150px;
+  font-family: 'Lato', sans-serif;
+  margin: 10px 0 50px 0;
+  padding: 50px;
+  text-align: center; }
+
+.quiz-creator {
+  font-family: 'Raleway', sans-serif;
+  height: 500px;
+  text-align: center;
+  width: 100%; }
+  .quiz-creator h2 {
+    padding: 30px; }
+  .quiz-creator input[type="text"], .quiz-creator textarea {
+    display: block;
+    height: 30px;
+    left: 45%;
+    margin: 10px 0;
+    position: relative;
+    width: 10%; }
+  .quiz-creator textarea {
+    height: 100px;
+    left: 35%;
+    width: 30%; }
+  .quiz-creator input[type="submit"] {
+    margin: 20px 0;
+    position: relative; }
+
+.quiz-page {
+  font-family: 'Raleway', sans-serif;
+  height: 500px;
+  text-align: center;
+  width: 100%; }
+  .quiz-page #quiz_form {
+    margin: 10px; }
+  .quiz-page input[type="submit"] {
+    margin: 30px 0 20px 0;
+    position: relative; }
+  .quiz-page select {
+    border-radius: 5px;
+    font-size: 15px; }
+  .quiz-page .return-link {
+    color: #0981f2;
+    padding-top: 50px;
+    text-decoration: none; }
+
+.correct {
+  color: green; }
+
+.wrong {
+  color: red; }
+
+/*# sourceMappingURL=index.css.map */

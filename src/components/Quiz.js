@@ -16,39 +16,33 @@ export default class Quiz extends React.Component {
 		let ansArr = []
 		for (var i = 0; i < questions; i++){
 			let ans = e.target.elements[i].options.selectedIndex
-			
-
 			if(e.target.elements[i].options[ans].value === "correct"){
 				ansArr.push(e.target.elements[i].options[ans].value)
-
 			}
-
 		}
-
 		alert("You got "+ansArr.length+" out of "+questions+" right!")
+
 	}
 	render(){
 		return(
-			<div>
-				<h1>Quiz Page</h1>
-				{ !this.state.quiz[0] ? <h2> Please create Quiz! </h2> :
+			<div className="quiz-page">
+				{ !this.state.quiz[0] ? <h2> <Link className="return-link" to={`/`}> You must create a quiz first!</Link> </h2> :
 					<form onSubmit={this.handleSubmit} id="quiz_form">
 						{this.state.quiz.map((val, index) => {
 							return (
-								<Question 
-									key={this.state.quiz.indexOf(val)} 
-									question={val.question} 
-									userAns={val.userAns} 
-									corrAns={val.correctAns}
-									wrongAns1={val.wrongAns[0]}
-									wrongAns2={val.wrongAns[1]}
-									wrongAns3={val.wrongAns[2]}
-								/>
-
+									<Question 
+										key={this.state.quiz.indexOf(val)} 
+										question={val.question} 
+										userAns={val.userAns} 
+										corrAns={val.correctAns}
+										wrongAns1={val.wrongAns[0]}
+										wrongAns2={val.wrongAns[1]}
+										wrongAns3={val.wrongAns[2]}
+									/>
 								)
 							})}
 						<input type="submit" />
-						<Link to={`/`}>  Create a new quiz! </Link> 
+						<Link className="new-link" to={`/`}>  Create a new quiz! </Link> 
 					</form> 
 				}
 			</div>
